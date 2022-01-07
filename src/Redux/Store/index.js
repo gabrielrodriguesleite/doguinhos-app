@@ -1,4 +1,7 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+
 
 // ===== actions =====
 const GET_IMAGE = 'GET_IMAGE', REQUEST_IMAGE = 'REQUEST_IMAGE', FAILED_REQUEST = 'FAILED_REQUEST';
@@ -35,6 +38,8 @@ function reducer(state = INITIAL_STATE, action) {
 }
 
 // ===== store =====
-const store = createStore(reducer);
+// const store = createStore(reducer);
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;
