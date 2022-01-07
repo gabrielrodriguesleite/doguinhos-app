@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchDog } from "./Redux/Store";
+import { fetchDog } from "./Redux/Actions";
 
 function App({ isFetching, src, fetchDog }) {
   return (
